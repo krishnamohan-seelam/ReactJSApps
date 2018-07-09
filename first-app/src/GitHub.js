@@ -54,16 +54,17 @@ let data =[
 ]
 
 const CardList = (props) => {
-  return (props.cards.map(card=><Card {...card} />));
+  return (props.cards.map(card=><Card key={card.id} {...card} />));
 }
 
 class Form extends Component {
   state ={userName:''}
   handleSubmit = (event) => {
       event.preventDefault();
-      console.log('Event:Submit ' +this.state.userName)
+      //console.log('Event:Submit ' +this.state.userName)
       axios.get(`https://api.github.com/users/${this.state.userName}`)
-      .then(resp => {this.props.onSubmit(resp.data)})
+      .then(resp => {this.props.onSubmit(resp.data);
+                      this.setState({userName:''})})
    }
   render()
   {

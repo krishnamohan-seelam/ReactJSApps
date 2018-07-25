@@ -1,12 +1,18 @@
 import React, { Component } from 'react';
 import './App.css';
 
+//SearchList-Functional Stateless Components
+/****
+A rule of thumb is to use functional stateless components when you don’t need local 
+state or component lifecycle methods.
+****/
+const SearchList = (props) =>
+{
+  const {searchlist}=props
+  return (searchlist.map(el => <div className="item">{el}</div>));
+  
+};
 
-class SearchList extends Component {
-  render() {
-    return (this.props.searchlist.map(el => <div className="item">{el}</div>));
-  }
-}
 class SearchBar extends Component {
 
   constructor(props) {

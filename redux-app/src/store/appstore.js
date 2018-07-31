@@ -1,7 +1,8 @@
 
 import {createStore} from 'redux';
 const initialState = {
-    counter: 0
+    counter: 0,
+    counterIcon:"large green thumbs up outline icon"
   };
   
 function reducer(state =initialState,action) {
@@ -10,11 +11,13 @@ function reducer(state =initialState,action) {
     switch(action.type) {
         case 'INCREMENT':
           return {
-            counter: state.counter + 1
+            counter: state.counter + 1,
+            counterIcon:"large green thumbs up outline icon"
           };
         case 'DECREMENT':
           return {
-            counter: state.counter - 1
+            counter: state.counter - 1,
+            counterIcon:"large red thumbs down outline icon"
           };
         default:
           return state;

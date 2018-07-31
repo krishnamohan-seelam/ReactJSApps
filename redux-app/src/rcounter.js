@@ -28,7 +28,7 @@ class ReduxCounter extends Component
              
              <button class="ui positive button" onClick={this.increment}>Increment</button>
              <div class="ui label">
-             <i class = ""></i> {this.props.counter}  
+             <i class = {this.props.counterIcon} ></i> {this.props.counter}  
              </div>
             </div>
              
@@ -42,7 +42,8 @@ class ReduxCounter extends Component
 
 function mapStateToProps(state) {
   return {
-    counter: state.counter
+    counter: state.counter,
+    counterIcon:state.counterIcon
   };
 }
 

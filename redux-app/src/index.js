@@ -11,7 +11,15 @@ const Main = ()=>
         <App/>
     </Provider>);
 
-
+const Footer =() =>
+(
+    <div class="ui fixed vertical footer segment">
+     
+    Geetha 2018. All Rights Reserved
+      
+     </div>
+ );
 
 ReactDOM.render(<Main  />, document.getElementById('root'));
+ReactDOM.render(<Footer  />, document.getElementById('foot'));
 

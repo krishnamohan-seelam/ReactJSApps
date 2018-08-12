@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-
+import React , {Component} from 'react';
 const Item = (props) => {
     return (
         <div class="item" >
@@ -19,19 +18,24 @@ const Item = (props) => {
 
 const ItemsList = (props) => {
     //console.log(props)
-    return (props.result.hits.map((items) => <Item key={items.objectID} {...items} />));
+    return (props.results.hits.map((items) => <Item key={items.objectID} {...items} />));
 
 }
 
+export class ResultSet extends Component
+{
+  constructor(props)
+  {
+    super(props);
 
-class NewsAggregator extends Component {
- 
-    render() {
-        if (!this.props.result) { return null; }
-        return (<div className="ui divided items">
-            <ItemsList result={this.props.result} />
-        </div>
-        );
-    }
+  }
+   render()
+   {
+     if (this.props.results)
+     return(  <div className="ui divided items">
+              <ItemsList results={this.props.results} />
+              </div>);
+
+
+   }
 }
-export default NewsAggregator;

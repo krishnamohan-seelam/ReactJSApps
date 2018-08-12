@@ -10,6 +10,7 @@ class LearningReact extends Component {
         <p className="starting-react">
         </p>
         <ButtonState />
+        To get started edit <code> src/LearningReact.js </code>
        </div>
 
     );

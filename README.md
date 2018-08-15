@@ -1,5 +1,4 @@
-
-##REACT-JS
+REACT-JS
 ----
 ### Introduction
 

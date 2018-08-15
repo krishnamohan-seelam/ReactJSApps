@@ -36,8 +36,8 @@ class NewsAggregator extends Component
   render()
   {
     let page = (this.state.searchResults && this.state.searchResults.page) || 0;
-    let disableNext  =  page > 0 ? false: true ;
-    
+    let disableNext  =  (page > 0) ? "enabled" : "disabled" ;
+
     return(
       <div>
         <SearchBar onSubmit = {this.getSearchRequest}  page ={page} disableNext ={disableNext} />

@@ -14,7 +14,7 @@ class NewsAggregator extends Component
 
   getSearchRequest=(searchRequest,page) =>
   {
-    console.log(`getSearchRequest ${searchRequest} for page:${page}`)
+    //console.log(`getSearchRequest ${searchRequest} for page:${page}`)
 
     this.fetchResultsfromApi(searchRequest,page).then(
       responseData =>
@@ -40,7 +40,8 @@ class NewsAggregator extends Component
 
     return(
       <div>
-        <SearchBar onSubmit = {this.getSearchRequest}  page ={page} disableNext ={disableNext} />
+        <SearchBar onSubmit = {this.getSearchRequest}  page ={page}
+                   disableNext ={disableNext} />
         <br/>
         {
           this.state.searchResults  ?

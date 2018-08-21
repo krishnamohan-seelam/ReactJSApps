@@ -8,7 +8,7 @@ export class SearchBar  extends Component
     this.state ={ searchInput: 'React' ,}
     this.handleSubmit  = this.handleSubmit.bind(this);
     this.handleSearch= this.handleSearch.bind(this);
-    this.handleNext = this.handleNext.bind(this);
+
   }
 
   handleSearch(event) {
@@ -26,7 +26,6 @@ export class SearchBar  extends Component
     switch (btn.value) {
       case "fetch":
       nextPage = 0;
-
       break;
       case "next":
       nextPage = nextPage + 1;
@@ -37,11 +36,7 @@ export class SearchBar  extends Component
 
     this.props.onSubmit(this.state.searchInput,nextPage);
   }
-  handleNext = (event) =>
-  {
-    event.preventDefault();
-    this.props.onSubmit(this.state.searchInput);
-  }
+
   render()
   {
     //console.log(`calling SearchBar render for page:${this.props.page}`);
@@ -61,7 +56,7 @@ export class SearchBar  extends Component
               Fetch
             </button>
             <button class="ui mini submit button"
-              type ="submit"  disabled={this.props.disableNext ==="disabled"} 
+              type ="submit"
               name ="Next" value ="next" onClick = {this.handleSubmit}>
               Next
             </button>
